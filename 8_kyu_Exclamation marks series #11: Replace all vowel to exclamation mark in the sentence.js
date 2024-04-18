@@ -6,6 +6,7 @@ replace("!Hi! Hi!") === "!H!! H!!"
 replace("aeiou") === "!!!!!"
 replace("ABCDE") === "!BCD!"
 
+1. Решение через циклы.
 function replace(s){
   const arr = s.split("");
   for (let i = 0; i < arr.length; i++) {
@@ -13,6 +14,12 @@ function replace(s){
       arr[i] = '!';
     }
   } return arr.join('');
+}
+
+2. Решение через методы.
+function replace(s){
+  const newStr = s.replaceAll(/[eyuioa]/gi, '!');
+  return newStr;
 }
 
 console.log(replace("Hi!")) // "H!!"
